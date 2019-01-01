@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./vue/vue.min.js"></script>
+    <script src="./js/index.js"></script>
+</head>
+<body>
+    <img src="./images/03.jpg" alt="" class="header-img">
+    <p>功能区</p>
+    <form action="https://www.baidu.com" enctype="multipart/form-data" method="post" id="form">
+        <div class="container" id="app">
+            <div class="container-left">
+                <div class="left-item1 menu-button">
+                    <label>监控图场景超清化</label>
+                </div>
+                <div class="left-item2 menu-button">
+                    <label>人脸超清化及自描述生成</label>
+                </div>
+                <div class="left-item3 menu-button">
+                    <label>操作记录</label>
+                </div>
+            </div>
+            <div class="container-right">
+                <!-- 场景图 -->
+                <div class="right-container-item1 main-content" style="display:block;">
+                    <div class="original-section">
+                        <div class="file">
+                            <form action="" class="activityForm">
+                            　　<div class="userdefined-file">
+                                　　<input type="text" name="userdefinedFile" id="uploadFile1" value="未选择任何文件">
+                                　　<button type="button">上传</button>
+                                </div>
+                                <input type="file" name="file" id="file1">
+                            </form>
+                        </div>
+                        <div class="original-section-img">
+                            <img src="" alt="" id="original-face-img" style="width:250px;height:300px;">
+                        </div>
+                        <div class="original-section-text">
+                            <label>原图</label>
+                        </div>
+                    </div>
+                    <div class="generating-btn">
+                        <div class="generating-btn-button">
+                            <nav class="rectangle-nav" id="scene-button"><span>超清化</span></nav>
+                            <nav class="triangle-nav"></nav>
+                        </div>
+                    </div>
+                    <div class="generating-section">
+                        <div class="generating-section-img">
+                            <img src="" alt="" id="generating-img" style="width:250px;height:300px;">
+                        </div>
+                        <div class="generating-section-text">
+                            <label>超清图</label>
+                        </div>
+                    </div>
+                </div>
+                <!-- 人脸 -->
+                <div class="right-container-item2  main-content">
+                    <div class="item2-original-img">
+                        <div class="file">
+                            <form action="" class="activityForm">
+                            　　<div class="userdefined-file">
+                                　　<input type="text" name="userdefinedFile" id="uploadFile2" value="未选择任何文件">
+                                　　<button type="button">上传</button>
+                                </div>
+                                <input type="file" name="file" id="file2">
+                            </form>
+                        </div>
+                        <div class="item2-original-img-img">
+                            <img src="" alt="" style="width:250px;height:300px;" id="original-scene-img">
+                        </div>
+                        <div class="item2-original-img-text">
+                            <label>原图</label>
+                        </div>
+                    </div>
+                    <div class="item2-original-button">
+                        <div class="item2-original-button-left" id="face-button" style="cursor:pointer;">
+                            <span>超清化</span>
+                        </div>
+                        <div class="item2-original-button-right"></div>
+                    </div>
+                    <div class="item2-generating-img">
+                        <div class="item2-generating-img-img">
+                            <img src="" alt="" id="generating-scene-img" style="width:250px;height:300px;">
+                        </div>
+                        <div class="item2-generating-img-text">
+                            <label>超清图</label>
+                        </div>
+                    </div>
+                    <div class="item2-original-text">
+                        <div class="item2-original-text-descible">
+                            <div><span id="face_type"></span></div>
+                            <div><span id="eyebrow_type"></span></div>
+                            <div><span id="mouth_type"></span></div>
+                            <div><span id="hair_color"></span></div>
+                            <div><span id="gender"></span></div>
+                        </div>
+                        <div class="item2-original-text-text">
+                            <label>描述</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-container-item3  main-content">
+                    <div class="container-item3-item1">
+                        <table border="1" style="border-collapse:collapse;" width="100%" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th><div class="show-item1">序号</div></th>
+                                    <th><div class="show-item2">操作时间</div></th>
+                                    <th><div class="show-item2">原图</div></th>
+                                    <th><div class="show-item2">超清图</div></th>
+                                    <th><div class="show-item2">图片描述</div></th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody">
+                                <tr>
+                                    <td><div class="show-content-item1">1</div></td>
+                                    <td><div class="show-content-item2 operation-time">
+                                        <div class="date"><span>2018-11-19<br>15:54:32</span></div>
+                                    </div></td>
+                                    <td><div class="show-content-item2"><img src="./images/00.jpg" alt=""></div></td>
+                                    <td><div class="show-content-item2"><img src="./images/00.jpg" alt=""></div></td>
+                                    <td><div class="show-content-item2">
+                                        <div class="text">
+                                            <span>脸型:圆脸</span><br>
+                                            <span>嘴型:圆脸</span><br>
+                                            <span>脸型:圆脸</span><br>
+                                            <span>脸型:圆脸</span><br>
+                                            <span>脸型:圆脸</span><br>
+                                        </div>
+                                    </div></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="show-content-item1">2</div></td>
+                                    <td><div class="show-content-item2 operation-time">
+                                        <div class="date"><span>2018-11-19<br>16:02:48</span></div>
+                                    </div></td>
+                                    <td><div class="show-content-item2"><img src="./images/00.jpg" alt=""></div></td>
+                                    <td><div class="show-content-item2"><img src="./images/00.jpg" alt=""></div></td>
+                                    <td><div class="show-content-item2">
+                                        <div class="text">
+                                            <span>脸型:圆脸</span><br>
+                                            <span>嘴型:圆脸</span><br>
+                                            <span>脸型:圆脸</span><br>
+                                            <span>脸型:圆脸</span><br>
+                                            <span>脸型:圆脸</span><br>
+                                        </div>
+                                    </div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="container-item3-item2">
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    
+    <div class="content-show">
+        <img src="./images/10.jpg" alt="" class="content-img">
+    </div>
+    <div class="footer-show">
+        <img src="./images/11.jpg" alt="" class="footer-img">
+    </div>
+    <script>
+        window.onload = function(){
+            var btn = document.getElementsByClassName('menu-button');
+            var scene_button = document.getElementById("scene-button");//场景图按钮
+            var content = document.getElementsByClassName('main-content');
+            var face_button = document.getElementById("face-button");//人脸图按钮
+            var path = null;
+            var imgPath = null;
+            var form = document.getElementById("form");
+            for(var i=0;i<btn.length;i++){
+                btn[i].index = i;
+                btn[i].onclick = function(){
+                    for(var j=0;j<content.length;j++){
+                        content[j].style.display = '';
+                    }
+                    content[this.index].style.display = 'block';
+                }
+            }
+            var timer = null;
+            function showImg1(){
+                var generatingImg = document.getElementById("generating-img");
+                generatingImg.src = './img/' + imgPath[2].slice(0,5) + '_1.jpg';
+            }
+            function showImg2(){
+                var generatingImg = document.getElementById("generating-scene-img");
+                generatingImg.src = './img/' + imgPath[2].slice(0,5) + '_1.jpg';
+                document.getElementById("face_type").innerHTML = '脸型：圆脸';
+                document.getElementById("eyebrow_type").innerHTML = '眉毛：浓眉';
+                document.getElementById("mouth_type").innerHTML = '嘴型：大嘴';
+                document.getElementById("hair_color").innerHTML = '发色：黑色';
+                document.getElementById("gender").innerHTML = '性别：女';
+            }
+            // 场景图超清化按钮
+            scene_button.onclick = function(){
+                clearTimeout(timer);
+                timer = setTimeout(showImg1,3000);
+            };
+            // 场景图超清化按钮
+            face_button.onclick = function(){
+                clearTimeout(timer);
+                timer = setTimeout(showImg2,3000);
+            };
+            // 表格隔行换色
+            var tbody = document.getElementById("tbody");
+            var tr = tbody.getElementsByTagName('tr');
+            for(var i=0;i<tr.length;i++){
+                if(i%2 == 0){
+                    tr[i].style.backgroundColor = 'rgb(1, 80, 243)';
+                }else{
+                    tr[i].style.backgroundColor = 'rgb(5, 71, 207)';
+                }
+            }
+            // 上传场景图片
+            document.getElementById("file1").onchange = function() {
+                path = document.getElementById("file1").value;
+                document.getElementById("uploadFile1").value = path;
+                imgPath = path.split("\\");
+                document.getElementById("original-face-img").src = './images/' + imgPath[2];
+            }
+            // 上传人脸涂片
+            document.getElementById("file2").onchange = function() {
+                path = document.getElementById("file2").value;
+                document.getElementById("uploadFile2").value = path;
+                imgPath = path.split("\\");
+                document.getElementById("original-scene-img").src = './images/' + imgPath[2];
+            }
+        }
+    </script>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                user:{
+                    face_type:'',
+                    eyebrow_type:'',
+                    mouth_type:'',
+                    hair_color:'',
+                    gender:''
+                }
+            },
+            methods:{
+                generate:function(){
+                    var face_img = document.getElementById("face_img");
+                    face_img.src = './images/item1_10.jpg';
+                    this.user.face_type = '脸型：圆脸';
+                    this.user.eyebrow_type = '眉毛：浓眉';
+                    this.user.mouth_type = '嘴型：大嘴';
+                    this.user.hair_color = '发色：黑色';
+                    this.user.gender = '性别：女';
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./jquery-3.3.1/jquery-3.3.1.min.js"></script>
+    <title>Document</title>
+    <style>
+        #button{
+            width: 100px;
+            height: 200px;
+        }
+        #file{
+            width: 100px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="选择图片" id="button">
+    <input type="file" id="file">
+    <script>
+        var file = document.getElementById("file");
+        file.onchange = function(){
+            var file = this.files[0];
+            if (window.FileReader) {    
+                var reader = new FileReader();    
+                reader.readAsDataURL(file);    
+                //监听文件读取结束后事件    
+                 reader.onloadend = function (e) {
+                    $(".img").attr("src",e.target.result);    //e.target.result就是最后的路径地址
+                    $("#file").after("<img src='" + e.target.result + "' alt=''>");
+                };    
+            } 
+        }
+    </script>
+</body>
+</html>
